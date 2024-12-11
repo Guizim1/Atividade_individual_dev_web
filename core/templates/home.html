@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Bem-vindo ao Sistema de RPG!</h1>
+    <p>Escolha entre as opções abaixo para gerenciar Mestres de Jogo e Jogadores:</p>
+    <ul>
+        <li><a href="{% url 'lista_mestres' %}">Mestres de Jogo</a></li>
+        <li><a href="{% url 'lista_jogadores' %}">Jogadores</a></li>
+    </ul>
+{% endblock %}

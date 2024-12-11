@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% if jogador %}Editar{% else %}Criar{% endif %} Jogador</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Nome: <input type="text" name="nome" value="{{ jogador.nome }}" required></label><br>
+        <label>Classe: <input type="text" name="classe" value="{{ jogador.classe }}" required></label><br>
+        <label>Nível: <input type="number" name="nivel" value="{{ jogador.nivel }}" required></label><br>
+        <label>Mestre de Jogo:
+            <select name="mestre_de_jogo" required>
+                <option value="">Selecione um mestre de jogo</option>
+                {% for mestre in mestres %}
+                    <option value="{{ mestre.id }}" {% if jogador.mestre_de_jogo.id == mestre.id %}selected{% endif %}>{{ mestre.nome }}</option>
+                {% endfor %}
+            </select>
+        </label><br>
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}

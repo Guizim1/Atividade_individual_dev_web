@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Cadastro de Mestre de Jogo</h1>
+        <form method="post">
+        {% csrf_token %}
+        
+        <label for="nome">Nome do Mestre:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="experiencia">Experiência do Mestre:</label>
+        <input type="text" id="experiencia" name="experiencia" required>
+
+        <button type="submit">Salvar</button>
+        </form> 
+{% endblock %}

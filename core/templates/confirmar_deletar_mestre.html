@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Excluir Mestre de Jogo</h1>
+    <p>Tem certeza de que deseja excluir o mestre de jogo {{ mestre_de_jogo.nome }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim</button>
+        <a href="{% url 'lista_mestres' %}">Cancelar</a>
+    </form>
+{% endblock %}
